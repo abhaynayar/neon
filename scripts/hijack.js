@@ -20,8 +20,7 @@ function handleCallback(input) {
 
 	Java.perform(function(){
 		Java.use(res[0])[res[1]].implementation = function() {
-			console.log('[+] hello from the other side');
-			this.super();
+			console.log('[+] Hello from the other side!');
 			/*[-] Error: onCreate(): argument count of 0 does not match any of:
 					.overload('android.os.Bundle')*/
 		}

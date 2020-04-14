@@ -23,9 +23,11 @@ print('''%s
          a simple frida wrapper
 ''' % (yellow,end))
 
-# hints = ['Use command line option -f to set package beforehand.',
-         # 'Use `fridar> refresh` to refresh device and processes.']
-# print(yellow + 'Hint: ' + random.choice(hints) + end + '\n')
+hints = ['Usual workflow: package > script {classes > methods > hijack}'
+        # 'Use command line option -f to set package beforehand.',
+        # 'Use `fridar> refresh` to refresh device and processes.'
+        ]
+print('%s(Hint) %s' % (yellow,end) + random.choice(hints) + '\n')
 
 class Preferences:
     def __init__(self):
@@ -124,7 +126,7 @@ class FridarPrompt(Cmd):
         print('Displays preferences')
 
     def do_run(self, inp):
-        if not prefs.script_name and not prefs.package_name:
+        if not prefs.script_name or not prefs.package_name:
             print(bad + ' Please choose package and script')
             return
 

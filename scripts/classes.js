@@ -1,21 +1,31 @@
 // only displays classes that HAVE been opened before.
 
 console.log('[~] Starting class enumeration')
-console.log('[!] You need to open corresponding activities first ...')
-console.log('[!] ... on your device for the classes to appear here')
+console.log('[!] You need to open corresponding activities on your')
+console.log('[!] ... device first, for the classes to appear here')
 
-Java.perform(function(){
-	Java.enumerateLoadedClasses({
+/*send('[!] Enter package name: ');
 
-		'onMatch':function(c) {
-			if(c.includes('b3nac'))
-				console.log(c);
-		},
+var className = ''
+recv('input', function onMessage(value) {
+	className = value.payload;
+	handleCallback(className);
+});*/
 
-		'onComplete':function() {}
+function handleCallback() {
+	Java.perform(function(){
+		Java.enumerateLoadedClasses({
+	
+			'onMatch': function(c) {
+				if(c.includes('b3nac'))
+					console.log(c);
+			},
+	
+			'onComplete': function() {}
+		});
 	});
-});
 
-console.log('[!] Finished script');
+	console.log('[!] Finished script');
+}
 
-// a.includes(b)
+handleCallback();
