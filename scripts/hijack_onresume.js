@@ -1,12 +1,12 @@
 /*
  * onResume method hijack by @abhaynayar
  * 11th April 2020
- * overrides implementation of given method
+ * overrides onresume implementation
 */
 
-console.log('[+] Starting onResume method hijack.');
-send('[.] Enter method name (example: com.package.class.method): ');
-console.log('[.] Now open the activity on your device.')
+console.log('[~] Starting onResume method hijack.');
+send('[!] Enter class name (example: com.package.class): ');
+console.log('[!] Now open the activity on your device')
 
 var methodName = '';
 recv('input', function onMessage(value) {
@@ -21,7 +21,9 @@ function handleCallback(input) {
 			console.log('[+] ' + input + '.onResume has been hijacked!');
 
 			// enter your own code here ...
+			console.log('[~] Returning to the original implementation');
 			this.onResume();
 		}
 	});
 }
+

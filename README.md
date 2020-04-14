@@ -1,6 +1,6 @@
 # fridar
 
-👾 simple fᴙida wrapper
+👾 a simple fᴙida wrapper
 
 ### Setup
 

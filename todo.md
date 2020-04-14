@@ -1,0 +1,6 @@
+- [ ] Refresh process list.
+- [ ] Add script info `fridar> what script-name`.
+- [ ] Add version command.
+- [ ] Add universal SSL unpin script.
+- [ ] Add script to print / change variables.
+- [ ] Auto-complete for command shortforms.
